@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/scicomp/home/ylb9/git/isdms/services/deployment-artifacts'
 let g:netrw_dirhist_2='/scicomp/home/ylb9'
 let g:netrw_dirhist_3='/home/ylb9/new_atim/deploy/tenants/btcdc_staging'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/home/ylb9/new_atim/deploy/tenants'
 let g:netrw_dirhist_5='/home/ylb9/new_atim/deploy/roles/agave_core/templates'
 let g:netrw_dirhist_6='/home/ylb9/cobra-atim/deploy/roles/agave_core'
 let g:netrw_dirhist_7='/home/ylb9/cobra-atim/deploy/roles/agave_auth/tasks'
+let g:netrw_dirhist_8='/scicomp/groups/OID/NCIRD/DBD/RDB/PRS/External/SBT_Mapping/Script'

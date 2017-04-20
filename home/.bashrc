@@ -27,7 +27,7 @@ if test -n "$NXSESSIONID" ; then
 fi
 
 #Load default modules
-module load R/3.2.3 java/latest Python/2.7.3 cobra-cli/0.1 
+module load R/3.2.3 java/latest Python/2.7.12 cobra-cli/0.1 
 
 #Set git prompt
 source ~/.git-prompt.sh
@@ -62,8 +62,10 @@ alias ls='/bin/ls --color=auto'
 alias more=less
 alias rmd='/bin/rm  --recursive --force --verbose '
 alias p="ps aux | grep "
-alias pserve="python -m SimpleHTTPServer 8080"
 alias scp="scp -Cq"
+alias python-imports="grep -EhR "^import" * | sort | uniq"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Source global definitions
 
