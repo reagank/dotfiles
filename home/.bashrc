@@ -44,12 +44,12 @@ export HISTIGNORE="&:[ ]*:exit"
 shopt -s histappend
 shopt -s cmdhist
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-stty -ixon
 
 #Create aliases
 alias vi=vim
 if test -t 1 ; then
     bind Space:magic-space
+    stty -ixon
 fi
 alias smrt='ssh smrtanalysis-dbd.biotech.cdc.gov'
 alias vip='vi "+Voom python"'
