@@ -37,12 +37,12 @@ export SSH_AUTH_SOCK=0
 export PATH=/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/JanOw_Dependencies/:$PATH
 export PERL5LIB=$PERL5LIB:/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/JanOw_Dependencies/perl_libs/
 #Set history options
-export HISTCONTROL="erasedups:ignoreboth"
-export HISFILESIZE=500000
-export HISTSIZE=100000
-export HISTIGNORE="&:[ ]*:exit"
 shopt -s histappend
 shopt -s cmdhist
+export HISTCONTROL="erasedups:ignoreboth"
+export HISFILESIZE=5000000
+export HISTSIZE=1000000
+export HISTIGNORE="&:[ ]*:exit:fg:bg:history"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #Create aliases
