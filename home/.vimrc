@@ -49,6 +49,7 @@ nmap <leader>l :setlocal number!<CR>
 nmap <leader>h :set hlsearch<CR>
 nmap <leader>n :noh<CR>
 nmap <leader>r :set relativenumber!<CR>
+let g:ackprg = 'ag --vimgrep'
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
