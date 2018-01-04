@@ -45,10 +45,8 @@ shopt -s cmdhist #store multi-line commands as one
 shopt -s lithist #include newlines in multi-line commands
 export HISTTIMEFORMAT='%F %T '
 export HISTCONTROL="erasedups:ignoreboth"
-export HISTFILESIZE=-1
-export HISTSIZE=-1
-#export HISFILESIZE=5000000
-#export HISTSIZE=1000000
+export HISFILESIZE=50000000
+export HISTSIZE=10000000
 export HISTIGNORE="&:[ ]*:exit:fg:bg:history:?:??"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
