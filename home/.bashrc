@@ -1,3 +1,4 @@
+##Set up for CDC login - not useful anywhere else
 case "$0" in
           -sh|sh|*/sh)	modules_shell=sh ;;
        -ksh|ksh|*/ksh)	modules_shell=ksh ;;
@@ -26,23 +27,29 @@ if test -n "$NXSESSIONID" ; then
    fi
 fi
 
-#Load default modules
+#Load default modules (CDC specific)
 module load R/3.2.3 java/latest Python/2.7.13 cobra-cli/0.1 
+
+#Set CDC-specific path variables
+export PATH=/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/JanOw_Dependencies/:$PATH
+export PERL5LIB=$PERL5LIB:/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/JanOw_Dependencies/perl_libs/
 
 #Set git prompt
 source ~/.git-prompt.sh
-#export PS1="\u@\h \
 export PS1="\u@\h:\W\$(__git_ps1)> "
 export SSH_AUTH_SOCK=0
-export PATH=/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/JanOw_Dependencies/:$PATH
-export PERL5LIB=$PERL5LIB:/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/JanOw_Dependencies/perl_libs/
+
 #Set history options
-shopt -s histappend
-shopt -s cmdhist
+shopt -s histappend # add to history, don't overwrite
+shopt -s cmdhist #store multi-line commands as one
+shopt -s lithist #include newlines in multi-line commands
+export HISTTIMEFORMAT='%F %T '
 export HISTCONTROL="erasedups:ignoreboth"
-export HISFILESIZE=5000000
-export HISTSIZE=1000000
-export HISTIGNORE="&:[ ]*:exit:fg:bg:history"
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+#export HISFILESIZE=5000000
+#export HISTSIZE=1000000
+export HISTIGNORE="&:[ ]*:exit:fg:bg:history:?:??"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #Create aliases
@@ -67,11 +74,12 @@ alias python-imports="grep -EhR "^import" * | sort | uniq"
 alias qstatf=/scicomp/home/ylb9/.fullqstat.sh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export SHEELCHECK_OPTS=" -e SC2012"
+export SHELLCHECK_OPTS=" -e SC2012"
 
 # Source global definitions
 
+if [[ -e /etc/bashrc ]]; then
 	. /etc/bashrc
-
+fi
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
