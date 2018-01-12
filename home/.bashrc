@@ -27,6 +27,10 @@ if test -n "$NXSESSIONID" ; then
    fi
 fi
 
+#Set default Editor to vim
+export EDITOR=vim
+export VISUAL=vim
+
 #Load default modules (CDC specific)
 module load R/3.2.3 java/latest Python/2.7.13 cobra-cli/0.1 
 
