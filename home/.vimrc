@@ -7,7 +7,6 @@ filetype indent on
 syntax on
 set background=dark
 set t_Co=256
-colorscheme rakr
 set number
 set autoindent
 set ruler
@@ -31,16 +30,6 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 "Variables {{{
 let mapleader = ","
-let g:jedi#auto_initialization = 0
-let g:used_javascript_libs = 'underscore,angularjs,angularui,angularuirouter,d3'
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_sh_shellcheck_args = "-e SC2012 -e 1090 -e 1091"
-let g:syntastic_javascript_checkers=['eslint']
 "}}}
 
 
@@ -49,10 +38,8 @@ nmap <leader>l :setlocal number!<CR>
 nmap <leader>h :set hlsearch<CR>
 nmap <leader>n :noh<CR>
 nmap <leader>r :set relativenumber!<CR>
-let g:ackprg = 'ag --vimgrep'
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " }}}
 
