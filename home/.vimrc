@@ -30,6 +30,7 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 "Variables {{{
 let mapleader = ","
+let g:ale_linters = { 'javascript': ['eslint'], 'python': ['flake8'] }
 "}}}
 
 
