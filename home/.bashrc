@@ -28,12 +28,17 @@ alias ll='/bin/ls -BFGhLl --color=auto'
 alias ls='/bin/ls --color=auto'
 alias more=less
 alias rmd='/bin/rm  --recursive --force --verbose '
-alias p="ps aux | grep "
 alias scp="scp -Cq"
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export SHELLCHECK_OPTS=" -e SC2012"
+if [[ $- == *i* ]]; then
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+    export SHELLCHECK_OPTS=" -e SC2012"
 
+    function p () {
+        ps aux | egrep "$*"
+    }
+
+fi
 # Source global definitions
 
 if [[ -e /etc/bashrc ]]; then
@@ -41,3 +46,7 @@ if [[ -e /etc/bashrc ]]; then
 fi
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
